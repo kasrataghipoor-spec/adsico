@@ -157,7 +157,7 @@ body {
     height: 69px;
     background-image: url(./datas/51-518949_big-image-sprite-sheet-bird-png.png);
     position: absolute;
-    left: 630px;
+    left: 530px;
     scale: 0;
 
     animation: fly 1s steps(7) infinite, moveBird 10s linear infinite 2s, mover 1s 2s forwards;
@@ -166,7 +166,7 @@ body {
 
 @keyframes moveBird {
     0% {
-        left: 680px;
+        left: 580px;
     }
 
     100% {
@@ -813,5 +813,6 @@ body{
     }
 
 }
+
 
 

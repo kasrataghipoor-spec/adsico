@@ -1,0 +1,180 @@
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Vazir", sans-serif;
+      }
+
+      body {
+        background-color: #121212;
+        color: #fff;
+        line-height: 1.6;
+      }
+
+      .film-banner {
+        position: relative;
+        width: 100%;
+        height: 90vh;
+        background: url(mov_156965_292978-b.webp) no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+      }
+
+      .film-banner::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(to top, rgb(18, 18, 18), rgba(18, 18, 18, 0.4));
+      }
+
+      .film-info {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: 1200px;
+        width: 90%;
+      }
+
+      .poster {
+        flex: 0 0 300px;
+        height: 450px;
+        background: url(mov_156965_292978-b.webp) no-repeat center center/cover;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+        margin-left: 2rem;
+      }
+
+      .details {
+        flex: 1;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        color: #ccc;
+      }
+
+      .summary {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        background: #f97316;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+        color: #fff;
+      }
+
+      .btn:hover {
+        background: #fb923c;
+        transform: scale(1.05);
+      }
+
+      .cast-section {
+        background: #1e1e1e;
+        padding: 2rem 10%;
+      }
+
+      .cast-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cast-list {
+        display: flex;
+        gap: 2rem;
+        overflow-x: auto ;
+      }
+
+      .cast-item {
+        flex: 0 0 auto;
+        width: 120px;
+        text-align: center;
+       
+        
+      }
+      .active{
+        transition: all 0.5s;
+      }
+      .active:hover{
+        transform: scale(1.1);
+      }
+
+      
+.img{
+  width: 100%;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+       height: 115px;
+         background-size: cover;
+         background-image: url(Payman_Maadi_and_Mahnaz_Afshar_20190201_04_\(cropped\).jpg);
+         background-repeat: no-repeat;
+}
+.img2{
+  width: 100%;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+         
+         height: 115px;
+         background-size: cover;
+         background-image: url(Payman_Maadi_and_Mahnaz_Afshar_20190201_04_\(cropped\).jpg);
+         background-repeat: no-repeat;
+}
+.img3{
+  width: 100%;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+         
+         height: 115px;
+         background-size: cover;
+         background-image: url(Payman_Maadi_and_Mahnaz_Afshar_20190201_04_\(cropped\).jpg);
+         background-repeat: no-repeat;
+}
+      .cast-name {
+        font-size: 0.9rem;
+      }
+
+      @media(max-width: 768px) {
+        .film-info {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;margin-bottom: 100px;
+        }
+
+        .poster {
+          
+          margin-left: 0;
+          margin-bottom: 2rem;
+        }
+
+        .buttons {
+          justify-content: center;
+        }
+      }

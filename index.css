@@ -166,7 +166,7 @@ body {
 
 @keyframes moveBird {
     0% {
-        left: 620px;
+        left: 680px;
     }
 
     100% {
@@ -813,4 +813,5 @@ body{
     }
 
 }
+
 

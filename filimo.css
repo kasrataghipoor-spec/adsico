@@ -42,7 +42,7 @@ button{
     .fd-d{
         display: none;
     }
-.fd-d-d{
+.fd-d.d{
     display: none;
 }
 .fd-new-price.not{
@@ -273,6 +273,7 @@ margin-top: 45px;
 .filino-discount-item.not{
     box-shadow: none;
 }
+
 
 
 

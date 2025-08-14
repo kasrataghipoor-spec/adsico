@@ -1,0 +1,127 @@
+body {
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  header {
+    margin-top: 30px;
+  }
+.text-top{
+    
+    height: 200px;
+ background-repeat: no-repeat;
+   background-position: 1000px top;
+ background-image: url(https://static.cdn.asset.filimo.com/flmt/mov_160514_292172.jpg?width=165&quality=85&sharpen=80&secret=bLCQuKUKLfAnMO4VH27Q5A);
+}
+
+  .filter-buttons {
+    display: inline-flex;
+    background-color: #f5f5f5;
+    border-radius: 999px;
+    padding: 4px;
+    margin: 30px auto;
+  }
+
+  .filter-btn {
+    padding: 20px 80px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 999px;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .filter-btn:hover{
+    transform:scale(130%);
+  }
+
+  .filter-btn.active {
+    background-color: #ff9337;
+    color: #fff;
+  }
+
+  /* باکس‌های اشتراک */
+  .plans-container {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+  }
+
+  .plan {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 1s;
+  }
+  .plan:hover{
+    transform:scale(130%);
+  }
+
+  .plan.green {
+    border-color: #30d68d;
+    background-color: #eafff5;
+    transition: all 2s;
+  }
+  .plan.green:hover{
+    transform:scale(130%);
+  }
+
+  .plan-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .plan-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #eee;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1ca860;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    font-size: 17px;
+    color: #999;
+  }
+
+  .duration {
+    font-size: 16px;
+    color: #333;
+  }
+
+  .tag {
+    background-color: #30d68d;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: inline-block;
+    transition: all 1s;
+  }
+  .tag:hover{
+   transform: translateX(-10px) ,scale(120%);
+
+  }

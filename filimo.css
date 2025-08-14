@@ -1,0 +1,273 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+}
+.icon svg{
+    width: 30px;
+}
+@font-face {
+    font-family: vazir;
+    src: url(./fonts/Vazir-Medium-FD-WOL.woff2) format("woff2");
+    font-weight: 300;
+}
+@font-face {
+    font-family: vazirb;
+    src: url(./fonts/Vazir-Bold-FD-WOL.woff2) format("woff2");
+    font-weight: 600;
+}
+@font-face {
+    font-family: vazirl;
+    src: url(./fonts/Vazir-Light-FD-WOL.woff2) format("woff2");
+    font-weight: 200;
+}
+.headimg{
+    position: fixed;
+    width: 80px;
+    height: 25px;
+    margin: 24px ;
+    margin-top: -12px;
+    
+}
+html{
+    font-size: 62.5%;
+}
+button{
+    font-family: vazir;
+}
+@media (max-width: 700px) {
+.fd-d-d{
+    display: none;
+}
+.fd-new-price.not{
+    padding-block: 3rem;
+    padding-inline: 2rem;
+}
+    .filino-discount-item.not{
+padding-block: 1.4rem;
+
+    }
+    body{
+
+    margin: 9px;
+}
+
+.m-name{
+    display: none;
+   
+}
+
+.site-img img:hover{
+   transform: translateX(-5px) scale(120%);
+    
+}
+}
+body{
+    font-size: 1.6rem;
+    background-color: #f5f5f5;
+    font-family: vazir;
+}
+.filter-buttons {
+    display: inline-flex;
+    background-color: #ffffff;
+    border-radius: 999px;
+    padding: 4px;
+    margin: 0px auto;
+    margin-top: 50px;
+  }
+
+  .filter-btn {
+    padding: 8px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 999px;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .filter-btn:hover{
+    transform:scale(80%);
+  }
+
+  .filter-btn.active {
+    background-color: #ff9337;
+    color: #fff;
+  }
+.container-md{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+    
+}
+header{
+    
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.site-img{
+    display: flex;
+
+padding-right:  30px;
+    
+}
+.site-img img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: -25px;
+    outline: 5px solid #f5f5f5;
+    box-shadow: 3px -3px 3px #000;
+    transition: all 1s;
+margin-top: 45px;
+
+}
+
+.site-img img:hover{
+   transform: translateX(20px) scale(120%);
+    
+}
+.site-content{
+    margin-top: 45px;
+    
+}
+.site-content h1{
+    font-size: 1.8rem;
+    margin-bottom: 1.1rem;
+    text-align: right;
+}
+.site-content p{
+    font-size: 1.4rem;
+    font-weight: 200;
+    text-align: right;
+}
+.site-content p span{
+    font-weight: 300;
+    line-height: 2;
+}
+.filino-discount-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    background-color: #fff;
+    padding-block: 2rem ;
+    align-items: center;
+    border-radius: 10px;
+    /* border: 1px solid #acababb7; */
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 0 3px #0002;
+    margin-bottom: 3rem;
+    transition: all 0.5s;
+}
+.filino-discount-item:hover{
+    transform: scale(98%) translateX(10px);
+}
+.fd-time{
+    display: flex;
+    gap: 1.5rem;
+    color: #000;
+    font-weight: 600;
+    align-items: center;
+}
+.fd-time span{
+    font-size: 1.4rem;
+}
+.fd-price{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.fd-price .fd-d{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #999;
+}
+.fd-price button{
+    padding: .5rem 1.3rem;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 134, 0, 0.712);
+    color: rgba(0, 134, 0, 0.712);
+    background-color: transparent;
+    transition: .2s;
+}
+
+.alert-new-user{
+    position: absolute;
+    font-size: 1rem;
+    background-color: #e4f6ec;
+    color: rgba(0, 134, 0, 0.712);
+    border-radius: 8px;
+    padding: 3px;
+    top: 0;
+    transform: translateY(-50%);
+}
+.filino-discount-item:hover button{
+    border: 1px solid rgba(0, 134, 0, 0);
+    background-color: rgba(0, 134, 0, 0.712);
+    color: #fff;
+   
+}
+.filino-discount-item:hover .fd-d{
+    color: #585858;
+}
+.filino-discount-item.active{
+    background-color: rgba(28, 181, 97, .08);
+    border: 1px solid #08d162;
+    transition: .4s;
+}
+
+.filino-discount-item.active button{
+    border: 1px solid rgba(0, 134, 0, 0);
+    background-color: rgba(0, 134, 0, 0.712);
+    color: #fff;
+}
+.filino-discount-item.active .alert-new-user{
+    background-color: rgba(0, 134, 0, 0.712);
+    color: #fff;
+}
+.filino-discount-item.active:hover button{
+    background-color: rgba(0, 88, 0, 0.712);
+}
+.filino-discount-item.active:hover{
+    transform: scale(1.04) translateX(10px);
+}
+.alert-new-user.hidden{
+    display: none;
+}
+.site-textend a{
+    text-decoration: line-through;
+    color:#999
+}
+.site-textend {
+    text-align: right;
+    color: #999;
+    font-family: vazirl;
+    padding: 20px;
+    margin: 20px;
+    font-size: 15px;
+    
+}
+.site-textend p {
+    text-align: right;
+    font-size: 14px;
+    
+}
+.alert-new-user.noty{
+    background-color: white;
+    ;
+    
+}
+.filino-discount-item.not{
+    box-shadow: none;
+}
+
+
+

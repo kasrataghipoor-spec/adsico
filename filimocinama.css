@@ -126,7 +126,7 @@ margin-top: 45px;
     line-height: 2;
 }
 @media (max-width: 700px) {
-.fd-d-d{
+.fd-d.d{
     display: none;
 }
 .fd-new-price.not{
@@ -283,6 +283,7 @@ padding-block: 1.4rem;
 .filino-discount-item.not{
     box-shadow: none;
 }
+
 
 
 

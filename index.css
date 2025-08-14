@@ -155,7 +155,7 @@ body {
     z-index: 99999;
     width: 102px;
     height: 69px;
-    background-image: url(./51-518949_big-image-sprite-sheet-bird-png.png);
+    background-image: url(./datas/51-518949_big-image-sprite-sheet-bird-png.png);
     position: absolute;
     left: 630px;
     scale: 0;
@@ -255,7 +255,7 @@ body {
         z-index: 99999999999;
         width:0;
         height: 0;
-        background-image: url(./51-518949_big-image-sprite-sheet-bird-png.png);
+        background-image: url(./datas/51-518949_big-image-sprite-sheet-bird-png.png);
         position: none;
         display: none;
         left: -630px;
@@ -292,7 +292,7 @@ body {
 
 
 .cinema-section {
-    background: url('bg-cinama.png') ;
+    background: url('./datas/bg-cinama.png') ;
     
     background-repeat: no-repeat;
     background-position: center;
@@ -813,3 +813,4 @@ body{
     }
 
 }
+

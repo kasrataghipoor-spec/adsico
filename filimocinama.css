@@ -10,17 +10,17 @@
 }
 @font-face {
     font-family: vazir;
-    src: url(./web_10/fonts/Vazir-Medium-FD-WOL.woff2) format("woff2");
+    src: url(./datas/Vazir-Medium-FD-WOL.woff2) format("woff2");
     font-weight: 300;
 }
 @font-face {
     font-family: vazirb;
-    src: url(./web_10/fonts/Vazir-Bold-FD-WOL.woff2) format("woff2");
+    src: url(./datas/Vazir-Bold-FD-WOL.woff2) format("woff2");
     font-weight: 600;
 }
 @font-face {
     font-family: vazirl;
-    src: url(./web_10/fonts/Vazir-Light-FD-WOL.woff2) format("woff2");
+    src: url(./datas/Vazir-Light-FD-WOL.woff2) format("woff2");
     font-weight: 200;
 }
 .headimg{
@@ -283,6 +283,7 @@ padding-block: 1.4rem;
 .filino-discount-item.not{
     box-shadow: none;
 }
+
 
 
 

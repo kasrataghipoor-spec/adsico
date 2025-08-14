@@ -16,7 +16,7 @@
         position: relative;
         width: 100%;
         height: 90vh;
-        background: url(mov_156965_292978-b.webp) no-repeat center center/cover;
+        background: url(./datas/mov_156965_292978-b.webp) no-repeat center center/cover;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -46,7 +46,7 @@
       .poster {
         flex: 0 0 300px;
         height: 450px;
-        background: url(mov_156965_292978-b.webp) no-repeat center center/cover;
+        background: url(./datas/mov_156965_292978-b.webp) no-repeat center center/cover;
         border-radius: 12px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.7);
         margin-left: 2rem;
@@ -134,7 +134,7 @@
         margin-bottom: 0.5rem;
        height: 115px;
          background-size: cover;
-         background-image: url(Payman_Maadi_and_Mahnaz_Afshar_20190201_04_\(cropped\).jpg);
+         background-image: url(./datas/Payman_Maadi_and_Mahnaz_Afshar_20190201_04_\(cropped\).jpg);
          background-repeat: no-repeat;
 }
 .img2{
@@ -144,7 +144,7 @@
          
          height: 115px;
          background-size: cover;
-         background-image: url(Payman_Maadi_and_Mahnaz_Afshar_20190201_04_\(cropped\).jpg);
+         background-image: url(./datas/Payman_Maadi_and_Mahnaz_Afshar_20190201_04_\(cropped\).jpg);
          background-repeat: no-repeat;
 }
 .img3{
@@ -154,7 +154,7 @@
          
          height: 115px;
          background-size: cover;
-         background-image: url(Payman_Maadi_and_Mahnaz_Afshar_20190201_04_\(cropped\).jpg);
+         background-image: url(./datas/Payman_Maadi_and_Mahnaz_Afshar_20190201_04_\(cropped\).jpg);
          background-repeat: no-repeat;
 }
       .cast-name {
@@ -177,4 +177,5 @@
         .buttons {
           justify-content: center;
         }
+
       }

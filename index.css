@@ -1,6 +1,6 @@
 @font-face {
     font-family: broyab;
-    src: url(BRoya.woff2);
+    src: url(./datas/BRoya.woff2);
 }
 
 
@@ -811,4 +811,5 @@ body{
         background-position: bottom ;
         margin-top: -159px;
     }
+
 }

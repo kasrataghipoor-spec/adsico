@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en" dir='rtl'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index">
+    <meta name="keywords" content="ieltscoachiran">
+    <title>سایت تبلیق کسری</title>
+    
+    <!--fonts and icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Badeen+Display&family=Gulzar&family=Handjet:wght@100..900&family=Honk&family=Pinyon+Script&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <head>
+
+        <script src="https://www.bertinapark.com/js/jquery-2.1.4.min.js"></script>
+        <link rel="shortcut icon" href="/data/TMS-2-1.png">
+        <link rel="manifest" href="https://www.bertinapark.com/site.webmanifest">
+        <link rel="mask-icon" href="https://www.bertinapark.com/fimg/safari-pinned-tab.svg" color="#5bbad5">
+    </head>
+
+</head>
+<style>
+    @font-face {
+        font-family: BRoya;
+        src: url(/data/BRoya.woff2) format('woff2'), /*font-style: normal;*/
+    }
+    
+    @font-face {
+        font-family: BRoyabold;
+        src: url(/data/BRoyaBold.woff2) format('woff2'), /*font-style: normal;*/
+    }
+    
+    @font-face {
+        font-family: vazir;
+        src: url(/data/Vazir.woff2) format(woff2);
+    }
+    
+    @font-face {
+        font-family: bnazanin;
+        src: url(/data/BNaznnBd.woff2) format(woff2);
+    }
+    
+    .search-box {
+        display: flex;
+        align-items: center;
+        border: 2px solid #007BFF;
+        border-radius: 30px;
+        padding: 5px 15px;
+        background-color: #fff;
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .search-box input {
+        border: none;
+        outline: none;
+        padding: 10px;
+        flex-grow: 1;
+        font-size: 16px;
+        background: transparent;
+    }
+    
+    .search-box button {
+        background: none;
+        border: none;
+        color: #007BFF;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background-color: #006d6f;
+        flex-wrap: wrap;
+    }
+    
+    .menu {
+        display: flex;
+        gap: 19px;
+        font-size: 30px;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .menu-item {
+        color: #b6e2df;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        background-color: #86cfc9;
+        color: #005352;
+        padding: 5px 40px;
+        border-radius: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .menu-item:hover {
+        color: white;
+        transform: translateY(8px);
+    }
+    
+    .menu-item.active {
+        background-color: #86cfc9;
+        color: #005352;
+        padding: 6px 50px;
+        border-radius: 100px;
+        text-align: center;
+    }
+    
+    
+    .name {
+        font-size: 18px;
+        font-weight: bold;
+        margin: auto;
+    }
+    
+    @media (max-width: 500px) {
+        .header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .name {
+            align-self: flex-end;
+            font-size: 16px;
+            margin-top: 9px;
+        }
+        .menu {
+            justify-content: flex-start;
+            gap: 10px;
+            font-size: 13px;
+        }
+    }
+    
+    .container {
+        width: 1px;
+        max-width: 1150px;
+        margin: 0px 0px;
+        padding: 40px 0;
+    }
+    /* Header */
+    
+    header {
+        background-color: var(--primary-color);
+        padding: 0px 0;
+        position: none;
+        top: 0;
+        z-index: 9;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        user-select: text;
+    }
+    
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header h1 {
+        color: #edf6f9;
+        font-weight: 700;
+        font-size: 2.3rem;
+        letter-spacing: 2px;
+        cursor: default;
+    }
+    
+    nav ul {
+        display: flex;
+        gap: 0px;
+        list-style: none;
+    }
+    
+    nav ul li a {
+        color: #edf6f9;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 7px;
+        border-radius: var(--border-radius);
+        transition: background-color var(--transition-speed);
+        font-size: 1.1rem;
+        user-select: text;
+    }
+    
+    nav ul li a:hover,
+    nav ul li a.active {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+    }
+    
+     :root {
+        --primary-color: #006d77;
+        --secondary-color: #83c5be;
+        --accent-color: #edf6f9;
+        --text-color: #1d3557;
+        --light-text: #555;
+        --border-radius: 12px;
+        --transition-speed: 0.3s;
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 35px;
+        font-weight: 700;
+        color: var(--primary-color);
+        user-select: text;
+        letter-spacing: 1.5px;
+    }
+    
+    .pricing {
+        margin-bottom: 70px;
+    }
+    
+    .pricing-cards {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        user-select: text;
+    }
+    
+    .price-card {
+        background: white;
+        padding: 35px 25px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        width: 280px;
+        text-align: center;
+        transition: box-shadow var(--transition-speed);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: default;
+    }
+    
+    .price-card:hover {
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+        transform: translateY(-8px);
+    }
+    
+    .price-card h3 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+    
+    .price-card ul {
+        list-style: none;
+        margin-bottom: 25px;
+        color: var(--light-text);
+        font-size: 1rem;
+        text-align: right;
+    }
+    
+    .price-card ul li {
+        padding: 6px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .price-card ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .price-card .price-tag {
+        font-size: 2.1rem;
+        font-weight: 900;
+        color: var(--secondary-color);
+        letter-spacing: 1.5px;
+    }
+    
+    #services {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+    
+    #services h2 {
+        text-align: center;
+        font-size: 46px;
+        margin-bottom: 50px;
+        color: #1a9b74;
+        font-weight: 1000;
+        letter-spacing: 0px;
+        font-family: "broyabold";
+    }
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    
+    .service-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px 25px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: default;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-icon {
+        font-size: 48px;
+        color: #20c997;
+        margin-bottom: 20px;
+        user-select: none;
+    }
+    
+    .service-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+        font-weight: 800;
+        color: #222;
+        font-family: "Rubik", sans-serif;
+    }
+    
+    .service-desc {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.5;
+        font-family: "brayabold";
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1150px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+    
+    .pricing {
+        margin-bottom: 70px;
+    }
+    
+    .pricing-cards {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        user-select: text;
+    }
+    
+    .price-card {
+        background: white;
+        padding: 35px 25px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        width: 280px;
+        text-align: center;
+        transition: box-shadow var(--transition-speed);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: default;
+    }
+    
+    .price-card:hover {
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+        transform: translateY(-18px);
+    }
+    
+    .price-card h3 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+        font-weight: 700;
+        font-family: "Rubik", sans-serif;
+    }
+    
+    .price-card ul {
+        list-style: none;
+        margin-bottom: 25px;
+        color: var(--light-text);
+        font-size: 1rem;
+        text-align: right;
+        font-family: "Rubik", sans-serif;
+    }
+    
+    .price-card ul li {
+        padding: 6px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .price-card ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .price-card .price-tag {
+        font-size: 2.1rem;
+        font-weight: 900;
+        color: var(--secondary-color);
+        letter-spacing: 1.5px;
+        font-family: sans-serif;
+    }
+    
+    .noor {
+        position: relative;
+        border: 5px;
+        border-radius: 100%;
+        color: #000000;
+        height: 200px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        background-image: url(/data/whatsapp-logo-Pre.png);
+        width: 200px;
+        transition: box-shadow var(--transition-speed);
+        transition: transform 1.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .noor:hover {
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+        transform: translatex(-30px);
+    }
+    
+    .noor2 {
+        position: relative;
+        border: 5px;
+        border-radius: 100%;
+        color: #000000;
+        height: 200px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        background-image: url(/data/images\ \(1\).png);
+        width: 200px;
+        transition: box-shadow var(--transition-speed);
+        transition: transform 1.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .noor2:hover {
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+        transform: translateY(-30px);
+    }
+    
+    .noor3 {
+        position: relative;
+        border: 5px;
+        border-radius: 100%;
+        color: #000000;
+        height: 200px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        background-image: url(/data/images\ \(2\).png);
+        width: 200px;
+        transition: box-shadow var(--transition-speed);
+        transition: transform 1.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .noor3:hover {
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+        transform: translatex(30px);
+    }
+    
+    .help {
+        position: relative;
+        border: 5px;
+        border-radius: 100%;
+        color: #000000;
+        height: 200px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        transition: box-shadow var(--transition-speed);
+        transition: transform 1.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .help:hover {
+        box-shadow: 0 5px 34px rgba(0, 0, 0, 0.527);
+        transform: scale(1.52);
+    }
+    
+    .help-title {
+        font-size: xx-large;
+        text-align: center;
+        position: relative;
+        top: 70px;
+        font-family: "BRoya";
+    }
+    
+    .gridall {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    
+    .border {
+        position: relative;
+        display: grid;
+        place-items: center;
+        justify-items: center;
+        align-items: center;
+        border: 5px;
+        border-radius: 0%;
+        height: 100px;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90vw;
+        background-color: #1a9b74;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.387);
+    }
+    
+    .gridmos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    
+    .text {
+        font-size: xxx-large;
+        color: #ffffff;
+        text-align: center;
+        font-family: BRoyabold
+    }
+    
+    .brd {
+        position: relative;
+        display: grid;
+        place-items: center;
+        justify-items: center;
+        align-items: center;
+        border: 5px;
+        border-radius: 0%;
+        height: 899px;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90vw;
+        background-color: #1a9b74;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.387);
+    }
+    
+    .menu2 {
+        position: sticky;
+        top: -60px;
+        /* منو رو می‌بره بالا وقتی بهش رسیدی */
+        background-color: crimson;
+        color: white;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+    
+    .spacer {
+        height: 200px;
+        /* یه فاصله‌ی بالا */
+    }
+    
+    .content {
+        height: 2000px;
+        background: linear-gradient(#eee, #ccc);
+    }
+ .search-container {
+    position: static;
+    top: 20px;
+    margin: 200px auto ;
+    margin-bottom: 500px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    max-width: 800px;
+    min-width: 200px;
+
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+
+    transition: all 0.3s ease-in-out;
+}
+
+/* حالت موبایل */
+@media (max-width: 600px) {
+    .search-container {
+        /* تغیر چیدمان موبایله */
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+        border-radius: 30px;
+        width: 90%;
+    }
+}
+
+/* حالت تبلت */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .search-container {
+        width: 95%;
+        padding: 12px 18px;
+        border-radius: 40px;
+    }
+}
+
+/* حالت دسکتاپ بزرگ */
+@media (min-width: 1200px) {
+    .search-container {
+        max-width: 1000px;
+    }
+}
+
+    
+    .search-container input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 15px 20px;
+        font-size: 16px;
+        border-radius: 50px;
+        background: transparent;
+    }
+    
+    .search-container button {
+        background-color: #28c76f;
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-family: BRoyaBold;
+    }
+    
+    .search-container button:hover {
+        background-color: #22b86a;
+    }
+      
+    body {
+        background: linear-gradient(#e3e3e3 0px, #4287f5 800px, white 400px, white 100%);
+    }
+</style>
+
+
+</head>
+<body  style=" margin: 0; padding: 0;overflow-x:hidden ;overflow-x: hidden;overscroll-behavior-x: none; background-color: rgb(255, 255, 255); ">
+<body style=" margin: 0; padding: 0;overflow-x:hidden ;overflow-x: hidden;overscroll-behavior-x: none; background-color: rgb(255, 255, 255); ">
+    
+        <header>
+
+            <div class="header">
+                <div class="menu">
+                    <a href="#" class="menu-item active">خانه</a>
+                    <a href="#services" class="menu-item">خدمات</a>
+                    <a href="#pricing" class="menu-item">تعرفه‌ها</a>
+                </div>
+
+            </div>
+
+        </header>
+    </div>
+
+
+
+<a href="tel:09122340547" style="text-decoration: none;color:rgb(18, 96, 18);"><img class="w-full h-full inline-block" src="/data/TMS-2-1.png" style="height:70px;object-fit: cover;overflow-x: hidden; display: block;margin-left: auto;margin-right: 7px;margin-top: 5px;">
+    <h1 style="position: relative;top: -75px;margin-right: 100px; font-family:broyabold;">پشتیبانی انلاین</h1>
+</a>
+<div style="border: #222 solid 1px;margin-top:-80px;"></div>
+
+
+ <div class="search-container">
+        <button>مشاهده اساتید</button>
+        <input type="text" placeholder="به دنبال یادگیری چه زبانی هستید؟">
+    </div>
+
+</body>
+
+<h1 style="font-size:xxx-large ; color: rgb(1, 80, 80); text-align: center;font-family:broyabold;font-weight: 900;">در دست ساخت</h1>
+<div class="time-c" style="color:rgb(1, 80, 80); text-align: center; font-size:34px;position: relative;  border:solid rgb(1, 80, 80) 10px; width: 300px  ; object-fit: cover; overflow-x: hidden; display: block; margin-left: auto; margin-right: auto;">
+    <div class="time" style="color: rgb(1, 80, 80); font-size: 70px; letter-spacing: 2px;"><span>Loading...</span></div>
+    <div class="en"></div>
+    <div class="fa"></div>
+    <script>
+        $(document).ready(function() {
+            // Time
+            ;
+            setInterval(function() {
+                var date = new Date();
+                var hr = date.getHours();
+                var min = date.getMinutes();
+                var sec = date.getSeconds();
+                if (min < 10) {
+                    min = "0" + min;
+                }
+                if (sec < 10) {
+                    sec = "0" + sec;
+                }
+                $('.time').html(hr + ":" + min + ":" + sec);
+            }, 1000);
+            // Date
+
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var day = date.getDate();
+
+            let today = new Date().toLocaleDateString('fa-IR');
+            var res = today.split("/");
+            /*
+            var month_fa = date.getJalaliMonth();
+            var year_fa = date.getJalaliFullYear();
+            var day_fa = date.getJalaliDate();
+            */
+            var month_fa = res[1];
+            var year_fa = res[0];
+            var day_fa = res[2];
+
+            month_fa = fixNumbers(month_fa);
+            year_fa = fixNumbers(year_fa);
+            day_fa = fixNumbers(day_fa);
+
+
+
+
+
+
+
+            var monthNames_fa = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور",
+                "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"
+            ];
+
+            $('.en').html(year + " " + monthNames[month] + " " + day);
+            $('.fa').html(day_fa + "  " + monthNames_fa[month_fa - 1] + " " + year_fa);
+        });
+
+        var
+            persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g],
+            arabicNumbers = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g],
+            fixNumbers = function(str) {
+                if (typeof str === 'string') {
+                    for (var i = 0; i < 10; i++) {
+                        str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i);
+                    }
+                }
+                return str;
+            };
+    </script>
+</div> </script>
+
+<section class="pricing container" id="pricing">
+    <h2 class="section-title">تعرفه‌ها</h2>
+    <div class="pricing-cards">
+        <div class="price-card">
+            <h3>طراحی سایت</h3>
+            <ul>
+                <li>هر صفحه 150 هزار تومان</li>
+                <li>زمان تحویل: 3 روز کاری</li>
+                <li>مهر اینماد بر سابت</li>
+            </ul>
+            <div class="price-tag">۱۵٬۰۰۰۰۰۰ تومان</div>
+        </div>
+        <div class="price-card">
+            <h3>کمپین گوگل ادز</h3>
+            <ul>
+                <li>هر هزار کلمه 120 هزار تومان</li>
+                <li>زمان تحویل: 5 روز کاری</li>
+                <li>بازبینی حرفه‌ای</li>
+            </ul>
+            <div class="price-tag">۱۲٬۰۰۰۰۰۰ تومان</div>
+        </div>
+        <div class="price-card">
+            <h3>سئو سایت</h3>
+            <ul>
+                <li>هر ساعت 200 هزار تومان</li>
+                <li>پشتیبانی حرفه‌ای</li>
+                <li>پشتیبانی 24 ساعته</li>
+            </ul>
+            <div class="price-tag">۲٬۰۰۰۰۰۰ تومان</div>
+        </div>
+    </div>
+</section>
+</a>
+<form dir="rtl" style="background-color: #fff; max-width: 80vw;justify-content: center; margin: auto; padding: 30px; border-radius: 20px; box-shadow: 0 0 25px rgba(0,0,0,0.1); font-family: Tahoma;"><label style="font-weight: bold; margin-bottom: 5px; display: block; margin-left: auto;margin-left: auto;">نام</label><input type="text" name="salamFood" required placeholder="مثلاً علی" style="width: 99%; padding: 10px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px;">
+    <label style="font-weight: bold; display: block;">رمز عبور</label><input type="password" name="pass" placeholder="رمز عبور" style="width: 99%; padding: 10px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px;"><label style="font-weight: bold; display: block;">سن</label>
+    <input type="number" name="age" min="1" max="4" style="width: 99%; padding: 10px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px;"><label style="font-weight: bold; display: block;">ایمیل</label><input type="email" name="email" placeholder="example@email.com"
+        dir="ltr" style="width: 99%; padding: 10px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px;">
+    <label style="font-weight: bold; display: block;">فایل</label><input type="file" name="file" style="margin-bottom: 15px;"><label style="font-weight: bold; display: block;">مقطع تحصیلی</label>
+    <select name="grade" style="width: 99%; padding: 10px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px;">
+            <option value="1">راهنمایی</option>
+            <option value="2">انتخابی</option>
+            <option value="3" selected>پیشرفته</option>
+            </select><label style="font-weight: bold; display: block; margin-bottom: 5px;">نوع خدمات:</label>
+    <div style="margin-bottom: 15px;"><input type="radio" name="service" value="مرد" checked><label style="margin-left: 10px;">ادورز</label><input type="radio" name="service" value="زن"><label style="margin-left: 10px;">طراحی سایت</label></div><label style="font-weight: bold; display: block;">تاریخ تولد</label>
+    <input type="date" name="birthdate" style="width: 99%; padding: 10px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px;"><label style="font-weight: bold; display: block;">توضیحات</label><textarea name="description" placeholder="متن دلخواه..."
+        style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px;"></textarea>
+    <label style="font-weight: bold; display: block;">مدت دوره:</label>
+    <div style="margin-bottom: 15px;"><input type="checkbox" name="duration" value="10"><label style="margin-left: 10px;">10 روزه</label><input type="checkbox" name="duration" value="7"><label style="margin-left: 10px;">7 روزه</label><input type="checkbox" name="duration" value="365">
+        <label style="margin-left: 10px;">365 روزه</label>
+    </div><a href="tel:09333234595" style="
+ display: block;
+        max-width: 300px;
+        margin: 20px auto 0;
+        background-color: #20c997;
+        color: white;
+        padding: 12px;
+        border-radius: 15px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        ">
+ ارسال </a></form>
+<section id="services">
+
+    <h2>خدمات ما</h2>
+    <div class=" services-grid ">
+        <div class="service-card ">
+            <div class="service-icon "><i class="fas fa-globe "></i></div>
+            <h3 class="service-title ">طراحی تخصصی</h3>
+            <p class="service-desc ">سایت‌ها، ویترین کسب‌وکار شما هستند و نقشی کلیدی در معرفی برند و خدماتتان به مخاطبان ایفا میکنند</p>
+        </div>
+        <div class="service-card ">
+            <div class="service-icon "><i class="fas fa-clock "></i></div>
+            <h3 class="service-title ">شارژ حساب گوگل ادز</h3>
+            <p class="service-desc ">برای استفاده از خدمات تبلیغات در گوگل، نیاز به شارژ گوگل ادز خواهید داشت</p>
+        </div>
+        <div class="service-card ">
+            <div class="service-icon "><i class="fas fa-file-alt "></i></div>
+            <h3 class="service-title ">سئو سایت</h3>
+            <p class="service-desc ">برای افزایش رایگان ترافیک سایت و ورود کاربران از طریق گوگل (و سایر موتورهای جستجو) باید سراغ سئو وبسایت بروید</p>
+        </div>
+        <div class="service-card ">
+            <div class="service-icon "><i class="fas fa-headset "></i></div>
+            <h3 class="service-title ">بازبینی و ویرایش</h3>
+            <p class="service-desc ">بازبینی سایت و ویرایش المان ها و جایگزاری تگ</p>
+        </div>
+        <div class="service-card ">
+            <div class="service-icon "><i class="fas fa-headset "></i></div>
+            <h3 class="service-title ">بازبینی و ویرایش</h3>
+            <p class="service-desc ">بازبینی سایت و ویرایش المان ها و جایگزاری تگ</p>
+        </div>
+        <div class="service-card ">
+            <div class="service-icon "><i class="fas fa-headset "></i></div>
+            <h3 class="service-title ">بازبینی و ویرایش</h3>
+            <p class="service-desc ">بازبینی سایت و ویرایش المان ها و جایگزاری تگ</p>
+        </div>
+
+    </div>
+</section>
+<br>
+
+<body style=" margin: 0; padding: 0;overflow-x:hidden ;overflow-x: hidden;overscroll-behavior-x: none; background-color: rgb(255, 255, 255); ">
+    <div class="border">
+        <div class="text"> رضایت مشتریان</div>
+    </div>
+
+
+
+
+    <div class="gridall">
+
+
+        <div class="noor "></div>
+
+
+
+
+        <div class="noor2 "></div>
+
+
+
+
+        <div class="noor3 "></div>
+
+
+        <div class="help">
+            <div class="help-title">اینجا رو کلیک کن</div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <h1 style=font-family:Handjet,sans-serif;font-size:40px;text-align:center;>در دست ساخت میباشد به زودی...</h1>
+    <h1 style=font-family:Handjet,sans-serif;font-size:40px;text-align:center;letter-spacing:10px;>...coming soon</h1>
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <div class="gridmos">
+        <img src="/data/card-image-rocket.webp" style="max-width: 100%;
+    height: auto;    vertical-align: middle; margin-right:auto; display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;">
+    </div>
+    <br>
+
+
+</body>
+<div class="brd">salam</div>
+
+<div style="position: relative; "></div><img src="https://static.delino.com/Image/Restaurant/Food/bznnxcld.2if_560x350.jpg " title="تهران " alt="ثوووسوی " style="width: 100vw; height:120px;object-fit: cover;overflow-x: hidden; display: block;margin-left:
+    auto;margin-right: auto; margin-top: 400px; ">
+<div>
+
+    <body style=" margin: 0; padding: 0;overflow-x:hidden ;overflow-x: hidden;overscroll-behavior-x: none; background-color: rgb(255, 255, 255); ">
+        <ol>
+
+            <li style="font-size: xxx-large;color: goldenrod; ">غذا ایرانی</li>
+
+            <ul>
+                <li style="font-size: xx-large; ">کباب پلو با شیت</li>
+                <li style="font-size: xx-large; ">گربه سبزی</li>
+            </ul>
+            <li style="font-size: xxx-large; color: goldenrod; ">فست فود</li>
+            <ul type="square ">
+                <li style="font-size: xx-large; ">پیترا</li>
+                <li style="font-size: xx-large; ">هم برگر</li>
+            </ul>
+        </ol>
+        <hr/>
+        <div style="border: #222 solid 1.5px; "></div>
+
+
+        <div style="text-align: center; ">
+            <img class="w-full h-full inline-block " src="https://dkstatics-public.digikala.com/digikala-mega-menu/09a98a13c782e12a245930b4515d243b17734a33_1740299441.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80 " width="95
+    " height="90 " alt="موبایل " title=" "><img class="w-full h-full inline-block " src="https://dkstatics-public.digikala.com/digikala-mega-menu/8a042388b93c5116604f35092a1fb35f8f0756be_1740299467.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80 "
+                i w wh width="95 " height="90 " alt="خانه و آشپزخانه " title=" "><img class="w-full h-full inline-block " src="https://dkstatics-public.digikala.com/digikala-mega-menu/deb3f514c62761797eb6a49e1559268b8bce3219_1740299561.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80 "
+                width="95 " height="90 " alt="تجهیزات پزشکی و سلامت " title=" "><img class="w-full h-full inline-block " src="https://dkstatics-public.digikala.com/digikala-mega-menu/deb3f514c62761797eb6a49e1559268b8bce3219_1740299561.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80 "
+                width="95 " height="90 " alt="تجهیزات پزشکی و سلامت " title=" "></a>
+        </div>
+        <div style="border: #222 solid 1.5px; "></div>
+
+        <hr>
+        <h2 style="background-color: rgba(0, 136, 255, 0.438); font-size: xxx-large; ">..استودیو شتر کویر..</h2>
+        <ol typ="1 " start="1 ">
+            <li style="font-size: xx-large; ">اننبر نسا با شتر</li>
+            <li style="font-size: xx-large; ">پتزا شتری</li>
+            <li style="font-size: xx-large; ">انتخابی</li>
+        </ol><img src="https://static.delino.com/Image/Restaurant/Food/bznnxcld.2if_560x350.jpg " title="تهران " alt="ثوووسوی " width="396 " height="3 ">
+        <hr/>
+        <dl>
+            <dts style="font-size: xx-large; ">فست فقور</dt>
+                <dd>پیتزا</dd>
+                <dd>لابلاباپیتزا</dd>
+                <dd>پیت میرزا</dd>
+        </dl>
+        <hr/>
+        <h3 style="font-size: xxx-large ;color: brown; ">شتر در کویری جالب</h3><img src="/data/94c3dd2572928b35bd0f0aa6c5084ec8.jpg " title="تهران " alt="ثوووسوی " style=" width :100vw ;height: 6000px; ">
+        <h6 style="font-size: xxx-large; ">ساخته شده در استدیو شتر کویر کسری تقی پور</h6>
+        <h1 style=font-family:Handjet,sans-serif;font-size:xx-large;text-align:center;>از آنجا که عدم شناسائی و تحقیر حقوق بشر منتهی به اعمال وحشیانه‌ای میشود</h1>
+        <h3 style=font-family:PinyonScript,cursive;font-size:x-large;text-align:center;>Whereas disregard and contempt for human rights have resulted</h3>
+        <audio src="/data/audio_60ae2a402e67d.mp3 " controls loop style="object-fit: cover;overflow-x: hidden; display: block;margin-left: auto;margin-right: auto; "></audio>
+    </body>
+    </body>
+
+    <body>
+        <!--این کد عکس رو فین عرض میکنه و بیرون نمیزنه-->
+    </body>
+</body>
+</body>
+</body>
+
+</html>

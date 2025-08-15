@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>دارالترجمه آریان</title>
+
+    <!-- فونت ایران سنس -->
+    <link href="https://cdn.fontcdn.ir/Font/Persian/IranSansWeb.css" rel="stylesheet" />
+
+    <!-- آیکون فنت‌آویز -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        /* ===== Reset & Base ===== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'IranSansWeb', Tahoma, sans-serif;
+        }
+        
+        body {
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* ===== Header ===== */
+        
+        header {
+            background: #0057b8;
+            color: #fff;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .logo span {
+            color: #ffcc00;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 16px;
+            padding: 7px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            background-color: #ffcc00;
+            color: #0057b8;
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            user-select: none;
+        }
+        /* ===== Hero Section ===== */
+        
+        #home {
+            background: linear-gradient(rgba(0, 87, 184, 0.85), rgba(0, 87, 184, 0.85)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+            color: #fff;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        #home h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+        
+        #home p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+        
+        #home .btn-primary {
+            background: #ffcc00;
+            color: #0057b8;
+            border: none;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+            transition: background-color 0.3s ease;
+            user-select: none;
+        }
+        
+        #home .btn-primary:hover {
+            background: #e6b800;
+        }
+        /* ===== Services Section ===== */
+        
+        #services {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        #services h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #0057b8;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px 25px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            color: #0057b8;
+            margin-bottom: 20px;
+            user-select: none;
+        }
+        
+        .service-title {
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 800;
+            color: #222;
+        }
+        
+        .service-desc {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+        /* ===== Portfolio Section ===== */
+        
+        #portfolio {
+            background: #f1f5f9;
+            padding: 60px 20px;
+        }
+        
+        #portfolio h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #0057b8;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            user-select: none;
+        }
+        
+        .portfolio-info {
+            padding: 20px;
+        }
+        
+        .portfolio-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0057b8;
+        }
+        
+        .portfolio-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+        /* ===== Contact Section ===== */
+        
+        #contact {
+            max-width: 800px;
+            margin: 60px auto 40px;
+            padding: 0 20px;
+        }
+        
+        #contact h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #0057b8;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        
+        form.contact-form {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        form.contact-form label {
+            font-weight: 700;
+            font-size: 16px;
+            color: #222;
+            user-select: none;
+        }
+        
+        form.contact-form input,
+        form.contact-form textarea {
+            padding: 15px 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            resize: vertical;
+            font-family: 'IranSansWeb', Tahoma, sans-serif;
+        }
+        
+        form.contact-form input:focus,
+        form.contact-form textarea:focus {
+            border-color: #0057b8;
+            outline: none;
+        }
+        
+        form.contact-form textarea {
+            min-height: 120px;
+        }
+        
+        form.contact-form button {
+            background: #ffcc00;
+            color: #0057b8;
+            border: none;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+            transition: background-color 0.3s ease;
+            user-select: none;
+        }
+        
+        form.contact-form button:hover {
+            background: #e6b800;
+        }
+        /* ===== Footer ===== */
+        
+        footer {
+            background: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: auto;
+            font-size: 14px;
+            user-select: none;
+        }
+        
+        footer a {
+            color: #ffcc00;
+            font-weight: 600;
+        }
+        /* ===== Responsive ===== */
+        
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                background: #0057b8;
+                height: 100vh;
+                width: 220px;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 25px;
+                gap: 30px;
+                transition: right 0.3s ease-in-out;
+                z-index: 9999;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">خدمات سایت<span>کسری</span></div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">خانه</a></li>
+                <li><a href="#services">خدمات</a></li>
+                <li><a href="#portfolio">نمونه‌کار</a></li>
+                <li><a href="#contact">تماس</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home">
+        <h1>دارالترجمه آریان</h1>
+        <p>خدمات ترجمه تخصصی، فوری و دقیق با تیمی از مترجمین حرفه‌ای و متعهد. ما همراه شما در مسیر جهانی شدن هستیم.</p>
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">تماس با ما</button>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services">
+        <h2>خدمات ما</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-globe"></i></div>
+                <h3 class="service-title">ترجمه تخصصی</h3>
+                <p class="service-desc">ترجمه متون تخصصی در حوزه‌های مختلف مانند پزشکی، حقوق، فناوری و مهندسی توسط کارشناسان مجرب.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-clock"></i></div>
+                <h3 class="service-title">ترجمه فوری</h3>
+                <p class="service-desc">تحویل ترجمه‌ها در کوتاه‌ترین زمان ممکن بدون کاهش کیفیت و دقت.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                <h3 class="service-title">بازبینی و ویرایش</h3>
+                <p class="service-desc">ویرایش دقیق و بازبینی ترجمه‌های انجام شده جهت تضمین بهترین کیفیت.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-headset"></i></div>
+                <h3 class="service-title">مشاوره ترجمه</h3>
+                <p class="service-desc">مشاوره تخصصی برای انتخاب بهترین نوع ترجمه و خدمات مرتبط.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="portfolio">
+        <h2>نمونه‌کارهای ما</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1581091870626-3a12f6c0cce4?auto=format&fit=crop&w=600&q=80" alt="نمونه ترجمه مقاله" class="portfolio-image" />
+                <div class="portfolio-info">
+                    <h3 class="portfolio-title">ترجمه مقاله تخصصی</h3>
+                    <p class="portfolio-desc">ترجمه مقاله‌ای در حوزه فناوری اطلاعات با کیفیت بالا و تحویل سریع.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1596495578060-c947a7a93783?auto=format&fit=crop&w=600&q=80" alt="ترجمه قرارداد حقوقی" class="portfolio-image" />
+                <div class="portfolio-info">
+                    <h3 class="portfolio-title">ترجمه قرارداد حقوقی</h3>
+                    <p class="portfolio-desc">ترجمه دقیق اسناد حقوقی با رعایت تمامی اصطلاحات تخصصی.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="ترجمه کاتالوگ تجاری" class="portfolio-image" />
+                <div class="portfolio-info">
+                    <h3 class="portfolio-title">ترجمه کاتالوگ تجاری</h3>
+                    <p class="portfolio-desc">ترجمه تخصصی کاتالوگ محصولات با حفظ جذابیت و روانی متن.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="بازبینی متون" class="portfolio-image" />
+                <div class="portfolio-info">
+                    <h3 class="portfolio-title">بازبینی متون ترجمه شده</h3>
+                    <p class="portfolio-desc">بازبینی و ویرایش حرفه‌ای متون ترجمه شده برای تضمین کیفیت نهایی.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+        <h2>تماس با ما</h2>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('پیام شما ارسال شد!'); this.reset();">
+            <label for="name">نام و نام خانوادگی</label>
+            <input type="text" id="name" name="name" placeholder="نام خود را وارد کنید" required />
+
+            <label for="email">ایمیل</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+
+            <label for="phone">تلفن تماس</label>
+            <input type="tel" id="phone" name="phone" placeholder="شماره تماس خود را وارد کنید" required pattern="[0-9]{10,15}" title="لطفا فقط عدد وارد کنید" />
+
+            <label for="message">پیام</label>
+            <textarea id="message" name="message" placeholder="پیام خود را بنویسید..." required></textarea>
+
+            <button type="submit">ارسال پیام</button>
+        </form>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© تمامی حقوق برای <a href="#">دارالترجمه آریان</a> محفوظ است. طراحی و توسعه توسط شما.</p>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

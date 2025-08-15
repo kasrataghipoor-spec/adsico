@@ -794,7 +794,7 @@ body{
 
 .bgimgfsina{
     
-     background: url(.datas/111.svg) ;
+     background: url(./datas/111.svg) ;
     position: absolute;
     filter: blur(12px) brightness(250%);
     
@@ -813,6 +813,7 @@ body{
     }
 
 }
+
 
 
 

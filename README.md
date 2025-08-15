@@ -1,5 +1,9 @@
 hi the best site ever made
 
 
+html css python js
 
-kasra taghipoor 
+
+
+pls do not copy that !!
+copyrite by kasra taghipoor

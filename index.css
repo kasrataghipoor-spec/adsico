@@ -796,7 +796,7 @@ body{
     
      background: url(./datas/111.svg) ;
     position: absolute;
-    filter: blur(12px) brightness(250%);
+    filter: blur(1px) ;
     
     background-repeat: no-repeat;
     background-position: center;
@@ -813,6 +813,7 @@ body{
     }
 
 }
+
 
 
 

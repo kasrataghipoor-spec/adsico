@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <link rel="stylesheet" href="project.css" />
+  </head>
+
+  <body>
+    <div class="card">
+      <h2>فرم ثبت‌نام</h2>
+
+      <label>نام کامل</label>
+      <input type="text" class="inpName" />
+
+      <label>ایمیل</label>
+      <input type="text" style="direction: ltr;" class="inpEmail" placeholder="example@domain.com" />
+
+      <label>رمز عبور</label>
+      <input type="password" class="inpPwd" placeholder="حداقل ۶ کاراکتر و @" />
+
+      <label>سن: <span id="ageValue">0</span></label>
+      <input type="range" class="inpAge" min="10" max="70" value="0" />
+
+      <label>رشته تحصیلی</label>
+      <select class="inpField">
+        <option value="">انتخاب رشته</option>
+        <option value="computer">مهندسی کامپیوتر</option>
+        <option value="electrical">مهندسی برق</option>
+        <option value="math">ریاضی</option>
+        <option value="physics">فیزیک</option>
+        <option value="other">سایر</option>
+      </select>
+
+      <label>جنسیت</label>
+      <div class="gender">
+        <label
+          ><input type="radio" name="gender" value="male" checked /> مرد</label
+        >
+        <label><input type="radio" name="gender" value="female" /> خانم</label>
+        <label
+          ><input type="radio" name="gender" value="other" /> ترجیح نمی‌دهم
+          بگویم</label
+        >
+      </div>
+
+      <div class="military">
+        <label>
+          <input type="checkbox" class="inpMilitary" /> خدمت سربازی رفته/می‌رود
+        </label>
+      </div>
+
+      <label>رنگ مورد علاقه</label>
+      <input type="color" class="inpColor" value="#f6f8fa" />
+
+      <div class="actions">
+        <button class="submit btnSubmit">ثبت‌نام</button>
+        <button class="reset btnReset" type="button">بازنشانی</button>
+      </div>
+
+      <div class="msg error"></div>
+      <div class="msg success"></div>
+    </div>
+
+    <script src="project.js"></script>
+  </body>
+</html>

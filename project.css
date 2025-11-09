@@ -1,0 +1,110 @@
+
+@font-face {
+    font-family: vazir;
+    src: url(Vazir-Medium-FD-WOL.woff2);
+}
+
+
+body{
+    font-family: vazir, Tahoma, sans-serif;
+    background: #f6f8fa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+    transition: 0.5s;
+}
+
+.military {
+    display: flex;
+    align-items: center;
+    gap: 6px; 
+    margin-top: 8px;
+}
+
+.military label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-wrap: nowrap;
+}
+
+.card{
+    width:380px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.06);
+    padding:20px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:14px;
+}
+
+label{
+    margin-top:10px;
+    display:block;
+}
+
+
+input, select{
+    width:100%;
+    padding:8px;
+    margin-top:4px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+
+.gender, .actions{
+    display:flex;
+    gap:10px;
+    margin-top:8px;
+    align-items:center;
+}
+
+
+.gender label{
+    display: inline-flex;   
+    align-items: center;
+    gap: 4px;              
+    white-space: nowrap; 
+}
+
+
+.actions button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button.submit{
+    background:#1f8ef1;
+    color:#fff;
+}
+
+button.reset{
+    background:#f1f5f9;
+}
+
+.msg{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.msg.error{
+    color:red;
+}
+
+.msg.success{
+    color:green;
+}
+
+input[disabled]{
+    opacity:0.6;
+    pointer-events:none;
+}

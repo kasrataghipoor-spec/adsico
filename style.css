@@ -103,7 +103,6 @@
         gap: 15px;
 
         text-decoration: none;
-        /* z-index: -99999999; */
     }
 
     .logo-img:hover {
@@ -197,8 +196,6 @@
         font-size: 1.8rem;
         cursor: pointer;
         z-index: 99001;
-        /* position: absolute; */
-        /* top: 99px; */
         margin-top: 7px;
     }
 
@@ -688,7 +685,7 @@
         margin-bottom: 70px;
     }
 
-    /* اضافه کردن استایل برای دکمه‌ها */
+    
 .theme-buttons {
     display: flex;
     gap: 10px;

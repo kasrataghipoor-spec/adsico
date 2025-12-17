@@ -97,7 +97,54 @@
         align-items: center;
     }
 
-  
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        text-decoration: none;
+    }
+
+    .logo-img:hover {
+        transform: scale(300%) translatey(59px) translateX(-40px);
+    }
+
+    .logo-img {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+       
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        object-fit: contain;
+        transform: scale(100%);
+
+    }
+
+    .logo-img img {
+        width: 100%;
+        position: relative;
+        top: -5px;
+        left: px;
+        height: 100%;
+        object-fit: cover;
+        object-position: left;
+
+
+    }
+
+    .logo-text h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-align: right;
+        color: var(--secondary);
+    }
+
+    .logo-text p {
+        font-size: 1rem;
+        color: var(--light);
+        margin-top: 0;
+    }
 
     nav ul {
         display: flex;
@@ -568,4 +615,3 @@
     background: rgba(255, 255, 255, 0.1);
     color: white;
 }
-

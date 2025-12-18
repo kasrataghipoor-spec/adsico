@@ -483,12 +483,22 @@
     
     .bgimgfsina h1{
         position: absolute;
-        color: #fff;
+       
+       background-image:url(gallery.png);
+        background-size: cover;
+        background-clip: text;
+        color: transparent;
+        
         font-size: 190px;
         z-index: 99;
         top: 125px;
-        
-        
+        animation: anan 20s linear infinite forwards;
+       
+    }
+    @keyframes anan {
+        to{
+            background-position: -500px;
+        }
     }
 
     @media (max-width: 1300px) {
@@ -600,7 +610,7 @@
         margin-bottom: 70px;
     }
 
-    /* اضافه کردن استایل برای دکمه‌ها */
+  
 .theme-buttons {
     display: flex;
     gap: 10px;

@@ -4,23 +4,25 @@
     box-sizing: border-box;
     text-align: center;
     justify-content: center;
+    user-select: none;
+    
 }
 .icon svg{
     width: 30px;
 }
 @font-face {
     font-family: vazir;
-    src: url(./datas/Vazir-Medium-FD-WOL.woff2) format("woff2");
+    src: url(./web_10/fonts/Vazir-Medium-FD-WOL.woff2) format("woff2");
     font-weight: 300;
 }
 @font-face {
     font-family: vazirb;
-    src: url(./datas/Vazir-Bold-FD-WOL.woff2) format("woff2");
+    src: url(./web_10/fonts/Vazir-Bold-FD-WOL.woff2) format("woff2");
     font-weight: 600;
 }
 @font-face {
     font-family: vazirl;
-    src: url(./datas/Vazir-Light-FD-WOL.woff2) format("woff2");
+    src: url(./web_10/fonts/Vazir-Light-FD-WOL.woff2) format("woff2");
     font-weight: 200;
 }
 .headimg{
@@ -41,6 +43,8 @@ body{
     font-size: 1.6rem;
     background-color: #f5f5f5;
     font-family: vazir;
+    overflow-x:hidden;
+    user-select: none;
 }
 .filter-buttons {
     display: inline-flex;
@@ -49,6 +53,7 @@ body{
     padding: 4px;
     margin: 0px auto;
     margin-top: 50px;
+     user-select: none;
   }
 
   .filter-btn {
@@ -60,12 +65,36 @@ body{
     background-color: transparent;
     color: #333;
     cursor: pointer;
+     user-select: none;
     transition: 0.3s ease;
+    
   }
   .filter-btn:hover{
-    transform:scale(80%);
+    transform:scale(95%);
   }
+.bg2{
+    transition: 1s;
+    position: fixed;
+    width: 99.5vw;
+z-index:-1;
+}
+.bg2 svg{
+height: 0vw;
+transition: 1s all;
 
+}
+.animate{
+    
+    animation: ee 3s  linear alternate forwards infinite;
+}
+@keyframes ee {
+    0%{
+
+    }
+    100%{
+transform: translateX(2000px);
+    }
+}
   .filter-btn.active {
     background-color: #ff9337;
     color: #fff;
@@ -126,7 +155,7 @@ margin-top: 45px;
     line-height: 2;
 }
 @media (max-width: 700px) {
-.fd-d.d{
+.fd-d-d{
     display: none;
 }
 .fd-new-price.not{
@@ -151,7 +180,31 @@ padding-block: 1.4rem;
    transform: translateX(-5px) scale(120%);
     
 }
+.bg2{
+    transition: 1s;
+    position: fixed;
+    width: 99.5vw;
+z-index:-1;
 }
+.bg2 svg{
+height: 0vw;
+transition: 1s all;
+scale: 170%;
+}
+.animate{
+    
+    animation: ee 7s  linear alternate forwards infinite;
+}
+@keyframes ee {
+    0%{
+
+    }
+    100%{
+transform: translateX(900px);
+    }
+}
+}
+
 .filino-discount-item{
     width: 100%;
     display: flex;
@@ -171,7 +224,7 @@ padding-block: 1.4rem;
     
 }
 .filino-discount-item:hover{
-    transform: scale(98%) translateX(10px);
+    transform: scale(100%) translateX(0px);
 }
 .fd-time{
     display: flex;
@@ -198,8 +251,24 @@ padding-block: 1.4rem;
     color: #999;
 }
 .fd-price button{
-    padding: .5rem 1.3rem;
+    width:13rem;
+    height: 3.3rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 134, 0, 0.712);
+    color: rgba(0, 134, 0, 0.712);
+    background-color: transparent;
+    transition: .2s;
+}
+.fd-prices  button{
+    
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 6px;
     border: 1px solid rgba(0, 134, 0, 0.712);
     color: rgba(0, 134, 0, 0.712);
@@ -225,6 +294,12 @@ padding-block: 1.4rem;
     border: 1px solid rgba(0, 134, 0, 0);
     background-color: rgba(0, 134, 0, 0.712);
     color: #fff;
+   
+}
+.filino-discount-item.not:hover button{
+    border: 1px solid rgb(0, 134, 0);
+    background-color: rgb(255, 255, 255);
+   color: rgba(0, 134, 0, 0.712);
    
 }
 .filino-discount-item:hover .fd-d{
@@ -285,6 +360,51 @@ padding-block: 1.4rem;
 }
 
 
+.txtinp{
+    border: none;
+     width:12.3rem;
+  
+     
+    height: 3.3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 134, 0, 0.712);
+    color: rgba(0, 134, 0, 0.712);
+    background-color: transparent;
+    transition: .2s;
+}
+.size{
+    width: 20rem; 
+      height: 3.3rem;
+       user-select: none;
+}
+.oh{
+     width:13rem;
+     height: 3.3rem;
+      user-select: none;
+}
+.dis{
+}
+.aa{
+    animation: ss 0.1s   2 linear;
 
 
+}
+@keyframes ss {
+    0%{
+transform: translateX(5px);
+    }
+    50%{
+                transform: translatey(-5px);
 
+    }
+    70%{
+        transform: translateY(6px);
+    }
+    100%{
+        transform: translateX(-5px);
+    }
+}

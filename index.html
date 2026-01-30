@@ -507,9 +507,9 @@ function updateIPCard() {
     }
   };
 
-  const script = document.createElement("script");
-  script.src = "http://ip-api.com/json/?callback=ipCallbackAuto";
-  document.body.appendChild(script);
+const script = document.createElement("script");
+script.src = "https://ip-api.com/json/?callback=ipCallbackAuto"; // حتما HTTPS
+document.body.appendChild(script);
 
   // Real ping measurement
   measureRealPing(pingElement);
@@ -597,3 +597,4 @@ setTimeout(() => {
 </script>
 </body>
 </html>
+

@@ -296,7 +296,6 @@
   </div>
 </div>
 
-
 <script>
 // =======================
 // المنت‌ها
@@ -440,138 +439,45 @@ const quickLinksBtn = document.querySelectorAll(".ddi4btn1")[1]; // دومین �
 const settingsInfo = document.querySelector(".ddi4info1");
 const quickLinksInfo = document.querySelector(".ddi4info2");
 
-// Quick Links
-quickLinksBtn.addEventListener("click", () => {
-  document.querySelectorAll(".ddi4btn1").forEach(btn => btn.classList.remove("active3"));
-  quickLinksBtn.classList.add("active3");
-
-  settingsInfo.style.display = "none";
-  quickLinksInfo.style.display = "block";
-
-  setTimeout(() => {
-    checkIpAndShowTable();
-    setupReloadButton();
-  }, 100);
-});
-
-// Appearance
-document.querySelectorAll(".ddi4btn1")[0].addEventListener("click", () => {
-  document.querySelectorAll(".ddi4btn1").forEach(btn => btn.classList.remove("active3"));
-  document.querySelectorAll(".ddi4btn1")[0].classList.add("active3");
-
-  settingsInfo.style.display = "block";
-  quickLinksInfo.style.display = "none";
-});
-
+// =======================
+// نمایش آی‌پی و کشور با پرچم
+// =======================
 function updateIPCard() {
   const ipElement = document.getElementById("ipAddress");
-  const pingElement = document.getElementById("pingValue");
   const statusText = document.querySelector(".status-text");
   const statusDot = document.querySelector(".status-dot");
+  const flagImage = document.getElementById("flagImage");
+  const countryFlag = document.getElementById("countryFlag");
 
-  // Show loading state
   ipElement.textContent = "در حال بارگذاری...";
-  pingElement.textContent = "در حال بارگذاری...";
   statusText.textContent = "در حال بررسی...";
   statusDot.style.background = "#FFA500";
 
-  // Fetch IP address
-  window.ipCallbackAuto = function (data) {
+  // تابع callback برای ip-api با HTTPS
+  window.ipCallbackAuto = function(data) {
     if (data.query) {
       ipElement.textContent = data.query;
       statusText.textContent = "متصل";
       statusDot.style.background = "#4CAF50";
-      
-      // Show country flag
-      const countryFlag = document.getElementById("countryFlag");
-      const flagImage = document.getElementById("flagImage");
-      
+
       if (data.countryCode) {
         flagImage.src = `https://flagicons.lipis.dev/flags/4x3/${data.countryCode.toLowerCase()}.svg`;
         countryFlag.style.display = "flex";
+      } else {
+        countryFlag.style.display = "none";
       }
-      
-      // Update country info in a subtle way
-      const countryInfo = `${data.country || "Unknown"} - ${data.city || "Unknown"}`;
-      console.log("Location:", countryInfo);
     } else {
       ipElement.textContent = "N/A";
       statusText.textContent = "خطا";
       statusDot.style.background = "#F44336";
-      
-      // Hide flag on error
-      const countryFlag = document.getElementById("countryFlag");
-      if (countryFlag) {
-        countryFlag.style.display = "none";
-      }
+      countryFlag.style.display = "none";
     }
   };
 
-const script = document.createElement("script");
-script.src = "https://ip-api.com/json/?callback=ipCallbackAuto"; // حتما HTTPS
-document.body.appendChild(script);
-
-  // Real ping measurement
-  measureRealPing(pingElement);
-}
-
-async function measureRealPing(element) {
-  const servers = [
-    'https://www.google.com/favicon.ico',
-    'https://www.cloudflare.com/favicon.ico',
-    'https://www.github.com/favicon.ico'
-  ];
-  
-  const pings = [];
-  
-  for (let i = 0; i < 3; i++) {
-    const server = servers[i % servers.length];
-    try {
-      const startTime = performance.now();
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000);
-      
-      const response = await fetch(server, { 
-        mode: 'no-cors',
-        signal: controller.signal
-      });
-      
-      clearTimeout(timeoutId);
-      const endTime = performance.now();
-      const ping = Math.round(endTime - startTime);
-      
-      if (ping > 0 && ping < 10000) {
-        pings.push(ping);
-      }
-    } catch (error) {
-      // Try next server or use fallback
-      continue;
-    }
-    
-    // Small delay between measurements
-    await new Promise(resolve => setTimeout(resolve, 100));
-  }
-  
-  if (pings.length > 0) {
-    // Calculate average ping
-    const avgPing = Math.round(pings.reduce((a, b) => a + b, 0) / pings.length);
-    element.textContent = `${avgPing}ms`;
-    
-    // Update status based on ping quality
-    const statusText = document.querySelector(".status-text");
-    if (avgPing < 50) {
-      statusText.textContent = "عالی";
-    } else if (avgPing < 100) {
-      statusText.textContent = "خوب";
-    } else if (avgPing < 200) {
-      statusText.textContent = "متصل";
-    } else {
-      statusText.textContent = "کند";
-    }
-  } else {
-    element.textContent = "N/A";
-    document.querySelector(".status-text").textContent = "بررسی نشد";
-  }
+  // اضافه کردن script با HTTPS
+  const script = document.createElement("script");
+  script.src = "https://ip-api.com/json/?callback=ipCallbackAuto";
+  document.body.appendChild(script);
 }
 
 // دکمه تجدید بررسی
@@ -593,8 +499,9 @@ quickLinksBtn.addEventListener("click", () => {
 setTimeout(() => {
   updateIPCard();
 }, 500);
-
 </script>
+
 </body>
 </html>
+
 

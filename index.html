@@ -439,10 +439,30 @@ const quickLinksBtn = document.querySelectorAll(".ddi4btn1")[1]; // دومین �
 const settingsInfo = document.querySelector(".ddi4info1");
 const quickLinksInfo = document.querySelector(".ddi4info2");
 
+document.querySelectorAll(".ddi4btn1")[0].addEventListener("click", () => {
+  document.querySelectorAll(".ddi4btn1").forEach(btn => btn.classList.remove("active3"));
+  document.querySelectorAll(".ddi4btn1")[0].classList.add("active3");
+
+  settingsInfo.style.display = "block";
+  quickLinksInfo.style.display = "none";
+});
+
+quickLinksBtn.addEventListener("click", () => {
+  document.querySelectorAll(".ddi4btn1").forEach(btn => btn.classList.remove("active3"));
+  quickLinksBtn.classList.add("active3");
+
+  settingsInfo.style.display = "none";
+  quickLinksInfo.style.display = "block";
+
+  setTimeout(() => {
+    updateIPCard();
+  }, 100);
+});
+
 // =======================
-// نمایش آی‌پی و کشور با پرچم
+// نمایش آی‌پی و پرچم کشور
 // =======================
-function updateIPCard() {
+async function updateIPCard() {
   const ipElement = document.getElementById("ipAddress");
   const statusText = document.querySelector(".status-text");
   const statusDot = document.querySelector(".status-dot");
@@ -453,31 +473,31 @@ function updateIPCard() {
   statusText.textContent = "در حال بررسی...";
   statusDot.style.background = "#FFA500";
 
-  // تابع callback برای ip-api با HTTPS
-  window.ipCallbackAuto = function(data) {
-    if (data.query) {
-      ipElement.textContent = data.query;
+  try {
+    const res = await fetch("https://ipwhois.app/json/");
+    const data = await res.json();
+
+    if (data.ip) {
+      ipElement.textContent = data.ip;
       statusText.textContent = "متصل";
       statusDot.style.background = "#4CAF50";
 
-      if (data.countryCode) {
-        flagImage.src = `https://flagicons.lipis.dev/flags/4x3/${data.countryCode.toLowerCase()}.svg`;
+      if (data.country_code) {
+        flagImage.src = `https://flagicons.lipis.dev/flags/4x3/${data.country_code.toLowerCase()}.svg`;
         countryFlag.style.display = "flex";
       } else {
         countryFlag.style.display = "none";
       }
     } else {
-      ipElement.textContent = "N/A";
-      statusText.textContent = "خطا";
-      statusDot.style.background = "#F44336";
-      countryFlag.style.display = "none";
+      throw new Error("IP not found");
     }
-  };
-
-  // اضافه کردن script با HTTPS
-  const script = document.createElement("script");
-  script.src = "https://ip-api.com/json/?callback=ipCallbackAuto";
-  document.body.appendChild(script);
+  } catch (err) {
+    ipElement.textContent = "N/A";
+    statusText.textContent = "خطا";
+    statusDot.style.background = "#F44336";
+    countryFlag.style.display = "none";
+    console.error("Error fetching IP:", err);
+  }
 }
 
 // دکمه تجدید بررسی
@@ -488,20 +508,16 @@ if (refreshBtn) {
   });
 }
 
-// وقتی Quick Links کلیک شد
-quickLinksBtn.addEventListener("click", () => {
-  setTimeout(() => {
-    updateIPCard();
-  }, 100);
-});
-
 // اجرای اولیه
 setTimeout(() => {
   updateIPCard();
 }, 500);
+
 </script>
+
 
 </body>
 </html>
+
 
 

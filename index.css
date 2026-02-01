@@ -134,9 +134,12 @@
  
   transition: transform 0.3s ease;
 }
+.refresh-animate{
+  animation: rtt 1s infinite forwards  linear;
 
+}
 #refresh-ip:hover {
-  transform: rotate(180deg);
+  
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -168,7 +171,7 @@
 .status-dot {
   width: 12px;
   height: 12px;
-  background: #4CAF50;
+  background: #55c559;
   border-radius: 50%;
   box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
   animation: pulse 2s infinite;
@@ -176,9 +179,16 @@
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  50% { opacity: 0.5; }
 }
+@keyframes rtt {
+  0%{
 
+  }
+  100%{
+transform: rotate(360deg);
+  }
+}
 .status-text {
   color: #ffffff;
   font-size: 26px;
@@ -208,6 +218,7 @@
   align-items: center;
   border-radius: 4px;
   overflow: hidden;
+  scale: 200%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -338,7 +349,7 @@ body {
     z-index: 99999;
     width: 102px;
     height: 69px;
-    background-image: url(./datas/51-518949_big-image-sprite-sheet-bird-png.png);
+    background-image: url(./51-518949_big-image-sprite-sheet-bird-png.png);
     position: absolute;
     left: 630px;
     scale: 0;
@@ -438,7 +449,7 @@ body {
         z-index: 99999999999;
         width:0;
         height: 0;
-        background-image: url(./datas/51-518949_big-image-sprite-sheet-bird-png.png);
+        background-image: url(./51-518949_big-image-sprite-sheet-bird-png.png);
         position: none;
         display: none;
         left: -630px;
@@ -475,7 +486,7 @@ body {
 
 
 .cinema-section {
-    background: url('./datas/bg-cinama.png') ;
+    background: url('bg-cinama.png') ;
     
     background-repeat: no-repeat;
     background-position: center;
@@ -1718,4 +1729,3 @@ body.no-scroll {
 .ds-none{
     display: none !important;
 }
-

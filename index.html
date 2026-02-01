@@ -258,270 +258,277 @@
           </div>
         </div>
 
-     <!-- بخش بررسی آیپی -->
-<div class="ddi4info2" style="display: none;">
-  <div class="settings-section">
-    <h4>بررسی آی پی</h4>
-    <p>اطلاعات کامل آی پی خود را بررسی کنید</p>
 
-   
+          <!-- بخش بررسی آیپی -->
+          <div class="ddi4info2" style="display: none;">
+            <div class="settings-section">
+              <h4>بررسی آی پی</h4>
+              <p>اطلاعات کامل آی پی خود را بررسی کنید</p>
 
-    <div class="check-ip-wrapper">
-      <!-- کارت آیپی با طراحی گلاسمورفیسم -->
-      <div class="ip-card">
-        <div class="ip-header">
-          <i id="refresh-ip"><svg style="width: 25px;height: 25px;" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-content opacity-70 hover:opacity-100" height="12" width="12" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path></svg>  </i>
-          <h3 class="ip-title">شبکه</h3>
-        </div>
-        <div class="ip-status">
-          <div class="status-indicator">
-            <span class="status-dot"></span>
-            <span class="status-text">متصل</span>
-          </div>
-          <div class="ip-display">
-            <div class="ip-label">آدرس IP</div>
-            <div class="country-flag" id="countryFlag" style="display: none;">
-              <img id="flagImage" src="" alt="Country Flag" width="40" height="24">
+
+
+              <div class="check-ip-wrapper">
+                <!-- کارت آیپی با طراحی گلاسمورفیسم -->
+                <div class="ip-card">
+                  <div class="ip-header">
+                    <i id="refresh-ip"><svg style="width: 25px;height: 25px;" stroke="currentColor" fill="currentColor"
+                        stroke-width="0" viewBox="0 0 24 24" class="text-content opacity-70 hover:opacity-100"
+                        height="12" width="12" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path
+                          d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z">
+                        </path>
+                      </svg> </i>
+                    <h3 class="ip-title">شبکه</h3>
+                  </div>
+                  <div class="ip-status">
+                    <div class="status-indicator">
+                      <span class="status-dot"></span>
+                      <span class="status-text">متصل</span>
+                    </div>
+                    <div class="ip-display">
+                      <div class="ip-label">آدرس IP</div>
+                      <div class="country-flag" id="countryFlag" style="display: none;">
+                        <img id="flagImage" src="" alt="Country Flag" width="40" height="24">
+                      </div>
+                      <div class="ip-value" id="ipAddress">N/A</div>
+                    </div>
+                  </div>
+                  <div class="ping-section">
+                    <div class="ping-header">
+                      <i class="fas fa-wifi ping-icon"></i>
+                      <span class="ping-label">پینگ - زمان پاسخگویی</span>
+                    </div>
+                    <div class="ping-value" id="pingValue">۱۴۲۱ms</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="ip-value" id="ipAddress">N/A</div>
           </div>
-        </div>
-        <div class="ping-section">
-          <div class="ping-header">
-            <i class="fas fa-wifi ping-icon"></i>
-            <span class="ping-label">پینگ - زمان پاسخگویی</span>
-          </div>
-          <div class="ping-value" id="pingValue">۱۴۲۱ms</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<script>
-// =======================
-// المنت‌ها
-// =======================
-const btnOpen = document.querySelector(".btn");       // دکمه باز کردن منو
-const btnClose = document.querySelector(".btnddi4");  // دکمه بستن منو
-const overlay = document.querySelector(".ddd1");      // بک‌گراند تار
-const menu = document.querySelector(".ddi4");         // منو
+          <script>
+            const btnOpen = document.querySelector(".btn");
+            const btnClose = document.querySelector(".btnddi4");
+            const overlay = document.querySelector(".ddd1");
+            const menu = document.querySelector(".ddi4");
 
-// =======================
-// باز/بسته کردن منو
-// =======================
-btnOpen.addEventListener("click", () => {
-  menu.classList.add("dialogopen");
-  overlay.innerHTML = `<div class="od"></div>`;
-  document.body.classList.add("no-scroll");
-});
+            btnOpen.addEventListener("click", () => {
+              menu.classList.add("dialogopen");
+              overlay.innerHTML = `<div class="od"></div>`;
+              document.body.classList.add("no-scroll");
+            });
 
-overlay.addEventListener("click", closeMenu);
-btnClose.addEventListener("click", closeMenu);
+            overlay.addEventListener("click", closeMenu);
+            btnClose.addEventListener("click", closeMenu);
 
-function closeMenu() {
-  menu.classList.remove("dialogopen");
-  overlay.innerHTML = "";
-  document.body.classList.remove("no-scroll");
-}
+            function closeMenu() {
+              menu.classList.remove("dialogopen");
+              overlay.innerHTML = "";
+              document.body.classList.remove("no-scroll");
+            }
 
-// =======================
-// انتخاب اسم فیلیمویی
-// =======================
-const nameCards = document.querySelectorAll(".theme-card1");
+            const nameCards = document.querySelectorAll(".theme-card1");
 
-function activateNameCard(card) {
-  nameCards.forEach(c => {
-    c.classList.remove("active");
-    const check = c.querySelector(".check");
-    if (check) check.remove();
-  });
+            function activateNameCard(card) {
+              nameCards.forEach(c => {
+                c.classList.remove("active");
+                const check = c.querySelector(".check");
+                if (check) check.remove();
+              });
 
-  card.classList.add("active");
-  const spanCheck = document.createElement("span");
-  spanCheck.classList.add("check");
-  card.appendChild(spanCheck);
-}
+              card.classList.add("active");
+              const spanCheck = document.createElement("span");
+              spanCheck.classList.add("check");
+              card.appendChild(spanCheck);
+            }
 
-nameCards.forEach(card => {
-  card.addEventListener("click", () => {
-    activateNameCard(card);
-    const selectedName = card.querySelector("h5").textContent;
-    localStorage.setItem("selectedName", selectedName);
+            nameCards.forEach(card => {
+              card.addEventListener("click", () => {
+                activateNameCard(card);
+                const selectedName = card.querySelector("h5").textContent;
+                localStorage.setItem("selectedName", selectedName);
 
-    if (selectedName === "پیشفرز") document.title = "filimo.com";
-    else if (selectedName === "فیلیمو پرو") document.title = "تماشای انلاین فیلم و سریال";
-  });
-});
+                if (selectedName === "پیشفرز") document.title = "filimo.com";
+                else if (selectedName === "فیلیمو پرو") document.title = "تماشای انلاین فیلم و سریال";
+              });
+            });
 
-// =======================
-// انتخاب تم
-// =======================
-const themeCards = document.querySelectorAll(".theme-card");
+            const themeCards = document.querySelectorAll(".theme-card");
 
-function activateThemeCard(card) {
-  themeCards.forEach(c => {
-    c.classList.remove("active");
-    const check = c.querySelector(".check");
-    if (check) check.remove();
-  });
+            function activateThemeCard(card) {
+              themeCards.forEach(c => {
+                c.classList.remove("active");
+                const check = c.querySelector(".check");
+                if (check) check.remove();
+              });
 
-  card.classList.add("active");
-  const spanCheck = document.createElement("span");
-  spanCheck.classList.add("check");
-  card.appendChild(spanCheck);
-}
+              card.classList.add("active");
+              const spanCheck = document.createElement("span");
+              spanCheck.classList.add("check");
+              card.appendChild(spanCheck);
+            }
 
-themeCards.forEach(card => {
-  card.addEventListener("click", () => {
-    activateThemeCard(card);
-    const selectedTheme = card.querySelector("h5").textContent;
-    localStorage.setItem("selectedTheme", selectedTheme);
+            themeCards.forEach(card => {
+              card.addEventListener("click", () => {
+                activateThemeCard(card);
+                const selectedTheme = card.querySelector("h5").textContent;
+                localStorage.setItem("selectedTheme", selectedTheme);
 
-    menu.classList.remove("ddi4-theme-ice", "ddi4-theme-glass", "ddi4-theme-dark", "ddi4-theme-light");
+                menu.classList.remove("ddi4-theme-ice", "ddi4-theme-glass", "ddi4-theme-dark", "ddi4-theme-light");
 
-    switch (selectedTheme) {
-      case "یخی":
-        menu.classList.add("ddi4-theme-ice");
-        break;
-      case "شیشه‌ای":
-        menu.classList.add("ddi4-theme-glass");
-        break;
-      case "تیره":
-        menu.classList.add("ddi4-theme-dark");
-        break;
-      case "روشن":
-        menu.classList.add("ddi4-theme-light");
-        break;
-    }
-  });
-});
+                switch (selectedTheme) {
+                  case "یخی":
+                    menu.classList.add("ddi4-theme-ice");
+                    break;
+                  case "شیشه‌ای":
+                    menu.classList.add("ddi4-theme-glass");
+                    break;
+                  case "تیره":
+                    menu.classList.add("ddi4-theme-dark");
+                    break;
+                  case "روشن":
+                    menu.classList.add("ddi4-theme-light");
+                    break;
+                }
+              });
+            });
 
-// =======================
-// بارگذاری انتخاب‌های قبلی
-// =======================
-window.addEventListener("DOMContentLoaded", () => {
-  const savedName = localStorage.getItem("selectedName");
-  const savedTheme = localStorage.getItem("selectedTheme");
+            window.addEventListener("DOMContentLoaded", () => {
+              const savedName = localStorage.getItem("selectedName");
+              const savedTheme = localStorage.getItem("selectedTheme");
 
-  if (savedName) {
-    nameCards.forEach(card => {
-      if (card.querySelector("h5").textContent === savedName) activateNameCard(card);
-    });
-  }
+              if (savedName) {
+                nameCards.forEach(card => {
+                  if (card.querySelector("h5").textContent === savedName) activateNameCard(card);
+                });
+              }
 
-  if (savedTheme) {
-    themeCards.forEach(card => {
-      if (card.querySelector("h5").textContent === savedTheme) {
-        activateThemeCard(card);
-        menu.classList.remove("ddi4-theme-ice", "ddi4-theme-glass", "ddi4-theme-dark", "ddi4-theme-light");
-        switch (savedTheme) {
-          case "یخی":
-            menu.classList.add("ddi4-theme-ice");
-            break;
-          case "شیشه‌ای":
-            menu.classList.add("ddi4-theme-glass");
-            break;
-          case "تیره":
-            menu.classList.add("ddi4-theme-dark");
-            break;
-          case "روشن":
-            menu.classList.add("ddi4-theme-light");
-            break;
-        }
-      }
-    });
-  }
-});
+              if (savedTheme) {
+                themeCards.forEach(card => {
+                  if (card.querySelector("h5").textContent === savedTheme) {
+                    activateThemeCard(card);
+                    menu.classList.remove("ddi4-theme-ice", "ddi4-theme-glass", "ddi4-theme-dark", "ddi4-theme-light");
+                    switch (savedTheme) {
+                      case "یخی":
+                        menu.classList.add("ddi4-theme-ice");
+                        break;
+                      case "شیشه‌ای":
+                        menu.classList.add("ddi4-theme-glass");
+                        break;
+                      case "تیره":
+                        menu.classList.add("ddi4-theme-dark");
+                        break;
+                      case "روشن":
+                        menu.classList.add("ddi4-theme-light");
+                        break;
+                    }
+                  }
+                });
+              }
+            });
 
-// =======================
-// Quick Links Buttons
-// =======================
-const quickLinksBtn = document.querySelectorAll(".ddi4btn1")[1]; // دومین دکمه
-const settingsInfo = document.querySelector(".ddi4info1");
-const quickLinksInfo = document.querySelector(".ddi4info2");
+            const quickLinksBtn = document.querySelectorAll(".ddi4btn1")[1];
+            const settingsInfo = document.querySelector(".ddi4info1");
+            const quickLinksInfo = document.querySelector(".ddi4info2");
 
-document.querySelectorAll(".ddi4btn1")[0].addEventListener("click", () => {
-  document.querySelectorAll(".ddi4btn1").forEach(btn => btn.classList.remove("active3"));
-  document.querySelectorAll(".ddi4btn1")[0].classList.add("active3");
+            document.querySelectorAll(".ddi4btn1")[0].addEventListener("click", () => {
+              document.querySelectorAll(".ddi4btn1").forEach(btn => btn.classList.remove("active3"));
+              document.querySelectorAll(".ddi4btn1")[0].classList.add("active3");
 
-  settingsInfo.style.display = "block";
-  quickLinksInfo.style.display = "none";
-});
+              settingsInfo.style.display = "block";
+              quickLinksInfo.style.display = "none";
+            });
 
-quickLinksBtn.addEventListener("click", () => {
-  document.querySelectorAll(".ddi4btn1").forEach(btn => btn.classList.remove("active3"));
-  quickLinksBtn.classList.add("active3");
+            quickLinksBtn.addEventListener("click", () => {
+              document.querySelectorAll(".ddi4btn1").forEach(btn => btn.classList.remove("active3"));
+              quickLinksBtn.classList.add("active3");
 
-  settingsInfo.style.display = "none";
-  quickLinksInfo.style.display = "block";
+              settingsInfo.style.display = "none";
+              quickLinksInfo.style.display = "block";
 
-  setTimeout(() => {
-    updateIPCard();
-  }, 100);
-});
+              setTimeout(() => {
+                updateIPCard();
+              }, 100);
+            });
 
-// =======================
-// نمایش آی‌پی و پرچم کشور
-// =======================
-async function updateIPCard() {
-  const ipElement = document.getElementById("ipAddress");
-  const statusText = document.querySelector(".status-text");
-  const statusDot = document.querySelector(".status-dot");
-  const flagImage = document.getElementById("flagImage");
-  const countryFlag = document.getElementById("countryFlag");
+            async function updateIPCard() {
+              const ipElement = document.getElementById("ipAddress");
+              const statusText = document.querySelector(".status-text");
+              const statusDot = document.querySelector(".status-dot");
+              const flagImage = document.getElementById("flagImage");
+              const countryFlag = document.getElementById("countryFlag");
+              const pingValue = document.getElementById("pingValue");
 
-  ipElement.textContent = "در حال بارگذاری...";
-  statusText.textContent = "در حال بررسی...";
-  statusDot.style.background = "#FFA500";
+              ipElement.textContent = "در حال بارگذاری...";
+              statusText.textContent = "در حال بررسی...";
+              statusDot.style.background = "#FFA500";
+              refreshBtn.classList.add("refresh-animate");
+              countryFlag.style.display = "none";
+              pingValue.textContent = "در حال اندازه‌گیری...";
 
-  try {
-    const res = await fetch("https://ipwhois.app/json/");
-    const data = await res.json();
+              try {
+                const res = await fetch("https://ipwhois.app/json/");
+                const data = await res.json();
 
-    if (data.ip) {
-      ipElement.textContent = data.ip;
-      statusText.textContent = "متصل";
-      statusDot.style.background = "#4CAF50";
+                if (data.ip) {
+                  ipElement.textContent = data.ip;
+                  statusText.textContent = "متصل";
+                  statusDot.style.background = "#4CAF50";
+                  setTimeout(() => {
+                    refreshBtn.classList.remove("refresh-animate");
+                  }, 500);
 
-      if (data.country_code) {
-        flagImage.src = `https://flagicons.lipis.dev/flags/4x3/${data.country_code.toLowerCase()}.svg`;
-        countryFlag.style.display = "flex";
-      } else {
-        countryFlag.style.display = "none";
-      }
-    } else {
-      throw new Error("IP not found");
-    }
-  } catch (err) {
-    ipElement.textContent = "N/A";
-    statusText.textContent = "خطا";
-    statusDot.style.background = "#F44336";
-    countryFlag.style.display = "none";
-    console.error("Error fetching IP:", err);
-  }
-}
+                  if (data.country_code) {
+                    flagImage.src = `https://flagicons.lipis.dev/flags/4x3/${data.country_code.toLowerCase()}.svg`;
+                    countryFlag.style.display = "flex";
+                  } else {
+                    countryFlag.style.display = "none";
+                  }
 
-// دکمه تجدید بررسی
-const refreshBtn = document.getElementById("refresh-ip");
-if (refreshBtn) {
-  refreshBtn.addEventListener("click", () => {
-    updateIPCard();
-  });
-}
+                  const ping = await measurePing();
+                  pingValue.textContent = ping !== 'N/A' ? `${ping}ms` : 'N/A';
+                } else {
+                  throw new Error("IP not found");
+                }
+              } catch (err) {
+                ipElement.textContent = "N/A";
+                statusText.textContent = "خطا";
+                statusDot.style.background = "#F44336";
+                countryFlag.style.display = "none";
+                pingValue.textContent = 'N/A';
+                console.error("Error fetching IP:", err);
+              }
+            }
 
-// اجرای اولیه
-setTimeout(() => {
-  updateIPCard();
-}, 500);
+            const refreshBtn = document.getElementById("refresh-ip");
+            if (refreshBtn) {
+              refreshBtn.addEventListener("click", () => {
+                updateIPCard();
+              });
+            }
 
-</script>
+            async function measurePing() {
+              const start = performance.now();
+              try {
+                const response = await fetch('https://ipwhois.app/json/', { method: 'GET' });
+                await response.json();
+                const end = performance.now();
+                return Math.round(end - start);
+              } catch (error) {
+                return 'N/A';
+              }
+            }
+
+            setTimeout(() => {
+              updateIPCard();
+            }, 500);
+
+          </script>
 
 
 </body>
+
 </html>
-
-
 
 
 
